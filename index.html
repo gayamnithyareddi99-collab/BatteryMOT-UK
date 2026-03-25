@@ -1,0 +1,2735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BatteryMOTUK</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+scroll-behavior:smooth;
+}
+
+/* COLORS */
+
+:root{
+--primary:#4F46E5;
+--secondary:#7C3AED;
+--accent:#EC4899;
+--text:#0F172A;
+--bg:#F8FAFC;
+}
+
+/* HERO */
+
+.hero{
+padding:160px 8%;
+background:var(--bg);
+}
+
+.hero-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero h1{
+font-size:44px;
+color:var(--text);
+margin-bottom:20px;
+}
+
+.hero p{
+color:#555;
+line-height:1.7;
+margin-bottom:25px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn-primary{
+background:var(--primary);
+color:white;
+}
+
+.btn-secondary{
+border:1px solid var(--primary);
+color:var(--primary);
+}
+
+.hero img{
+width:100%;
+}
+
+/* PLATFORM */
+
+.platform{
+padding:120px 8%;
+background:white;
+}
+
+.section-title{
+text-align:center;
+font-size:34px;
+margin-bottom:10px;
+}
+
+.section-sub{
+text-align:center;
+color:#666;
+margin-bottom:50px;
+}
+
+.platform-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.platform-card{
+background:#f9fafb;
+padding:25px;
+border-radius:10px;
+text-align:center;
+transition:.3s;
+}
+
+.platform-card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.platform-img{
+width:100%;
+height:160px;
+object-fit:contain;
+margin-bottom:15px;
+}
+
+/* PROCESS */
+
+.process{
+padding:120px 8%;
+background:#f9fafb;
+}
+
+.process-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+text-align:center;
+}
+
+.process img{
+width:100%;
+height:150px;
+object-fit:contain;
+margin-bottom:10px;
+}
+
+/* PRICING */
+
+.pricing{
+padding:120px 8%;
+background:white;
+}
+
+.pricing-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.price-card{
+border:1px solid #eee;
+padding:35px;
+border-radius:10px;
+text-align:center;
+}
+
+.price-card h3{
+margin-bottom:10px;
+}
+
+.price-card ul{
+list-style:none;
+margin:20px 0;
+}
+
+.price-card li{
+margin:8px 0;
+color:#555;
+}
+
+/* FAQ */
+
+.faq{
+padding:120px 8%;
+background:black;
+color:white;
+}
+
+.faq-container{
+max-width:800px;
+margin:auto;
+}
+
+.faq-item{
+border-bottom:1px solid #333;
+padding:18px 0;
+}
+
+.faq-question{
+display:flex;
+justify-content:space-between;
+cursor:pointer;
+}
+
+.faq-answer{
+display:none;
+color:#ccc;
+margin-top:8px;
+}
+
+/* CONTACT */
+
+.contact{
+padding:120px 8%;
+background:white;
+}
+
+.contact-container{
+max-width:1000px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+/* FOOTER */
+
+.footer{
+background:#111;
+color:#aaa;
+padding:20px;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.nav-links{
+display:none;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+padding:20px;
+}
+
+.menu-btn{
+display:block;
+}
+
+.hero-container,
+.platform-grid,
+.process-grid,
+.pricing-grid,
+.contact-container{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">BatteryMOTUK</div>
+
+<div class="nav-links" id="navLinks">
+
+<a href="#home">Home</a>
+<a href="#platform">Platform</a>
+<a href="#process">How It Works</a>
+<a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+</div>
+
+</header>
+<header class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">BatteryMOTUK</div>
+
+<nav id="navMenu">
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#process">Process</a>
+<a href="#platform">Platform</a>
+<a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</header>
+
+
+
+<style>
+
+/* NAVBAR */
+
+.navbar{
+width:100%;
+background:linear-gradient(
+135deg,
+#8B0000 0%,
+#800020 20%,
+#7E191B 35%,
+#191970 55%,
+#000080 70%,
+#003366 100%
+);
+padding:11px 8%;
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+font-family:'Segoe UI',sans-serif;
+box-shadow:0 3px 15px rgba(0,0,0,0.15);
+}
+
+/* CONTAINER */
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+/* LOGO */
+
+.logo{
+font-size:22px;
+font-weight:700;
+color:rgb(255, 255, 255);
+}
+
+/* NAV LINKS */
+
+#navMenu{
+display:flex;
+gap:35px;
+align-items:center;
+}
+
+/* LINKS */
+
+#navMenu a{
+text-decoration:none;
+color:white;
+font-size:15px;
+font-weight:500;
+position:relative;
+}
+
+/* HOVER UNDERLINE */
+
+#navMenu a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:rgb(255, 255, 255);
+transition:0.3s;
+}
+
+#navMenu a:hover::after{
+width:100%;
+}
+
+/* HAMBURGER */
+
+.menu-toggle{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
+}
+
+.menu-toggle span{
+width:25px;
+height:3px;
+background:white;
+display:block;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+#navMenu{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:linear-gradient(
+135deg,
+#8B0000 0%,
+#800020 20%,
+#7E191B 35%,
+#191970 55%,
+#000080 70%,
+#003366 100%
+);
+flex-direction:column;
+padding:25px 0;
+gap:20px;
+display:none;
+}
+
+#navMenu.active{
+display:flex;
+}
+
+.menu-toggle{
+display:flex;
+}
+
+}
+
+</style>
+
+
+
+<script>
+
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("navMenu");
+
+/* OPEN CLOSE MENU */
+
+toggle.addEventListener("click",()=>{
+menu.classList.toggle("active");
+});
+
+/* CLOSE MENU WHEN LINK CLICKED */
+
+document.querySelectorAll("#navMenu a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+menu.classList.remove("active");
+
+});
+
+});
+
+/* SMOOTH SCROLL */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+});
+
+</script>
+<!-- HERO SECTION START -->
+
+<section class="hero-section" id="home">
+
+<div class="hero-container">
+
+<!-- LEFT -->
+
+<div class="hero-left">
+
+<h1>Battery Certification & Grading for Safer, Smarter Energy Systems</h1>
+
+<div class="hero-divider"></div>
+
+<p class="hero-text">
+BatteryMOTUK is a battery grading and certification platform that transforms 
+uncertain battery conditions into clear, auditable decisions.
+
+We combine safety testing, health grading, and digital certification to help 
+businesses reduce risk, improve reuse value, and ensure safe battery lifecycle management.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#platform" class="btn-primary">Explore Platform</a>
+<a href="#contact" class="btn-secondary">Request Demo</a>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT -->
+
+<div class="hero-right">
+
+<img src="b.png" alt="BatteryMOTUK Dashboard">
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* HERO */
+
+.hero-section{
+position:relative;
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+overflow:hidden;
+}
+
+/* 🔥 PDF STYLE SHAPES */
+
+.hero-section::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:220px;
+height:220px;
+background:#8B0000;
+clip-path:polygon(100% 0, 0 0, 100% 100%);
+}
+
+.hero-section::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:240px;
+height:240px;
+background:#000080;
+clip-path:polygon(0 100%, 0 0, 100% 100%);
+}
+
+/* CONTAINER */
+
+.hero-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+position:relative;
+z-index:2;
+}
+
+/* LEFT */
+
+.hero-left h1{
+font-size:48px;
+color:#111;
+line-height:1.2;
+}
+
+/* DIVIDER */
+
+.hero-divider{
+width:70px;
+height:3px;
+margin:15px 0 20px;
+border-radius:3px;
+
+background:linear-gradient(
+90deg,
+#8B0000,
+#800020,
+#000080
+);
+}
+
+/* TEXT */
+
+.hero-text{
+color:#444;
+font-size:17px;
+line-height:1.8;
+margin-bottom:30px;
+max-width:520px;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+display:flex;
+gap:15px;
+}
+
+/* PRIMARY */
+
+.btn-primary{
+background:linear-gradient(
+135deg,
+#8B0000,
+#800020,
+#000080
+);
+
+color:white;
+padding:14px 28px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-primary:hover{
+transform:translateY(-2px);
+}
+
+/* SECONDARY */
+
+.btn-secondary{
+border:2px solid #8B0000;
+color:#8B0000;
+padding:14px 28px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-secondary:hover{
+background:#8B0000;
+color:white;
+}
+
+/* IMAGE */
+
+.hero-right img{
+width:100%;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-section{
+padding:80px 6%;
+}
+
+.hero-container{
+grid-template-columns:1fr;
+gap:35px;
+text-align:center;
+}
+
+.hero-left h1{
+font-size:30px;
+}
+
+.hero-divider{
+margin:15px auto 20px;
+}
+
+.hero-text{
+margin:auto;
+font-size:16px;
+}
+
+.hero-buttons{
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.hero-right{
+margin-top:20px;
+}
+
+}
+
+</style>
+
+
+<script>
+
+/* SMOOTH SCROLL */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+anchor.addEventListener("click", function(e) {
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+});
+
+</script>
+
+<!-- HERO SECTION END -->
+<!-- ABOUT SECTION START -->
+
+<section class="about-section" id="about">  
+
+<div class="about-container">
+
+<!-- LEFT CONTENT -->
+
+<div class="about-left">
+
+<h2>About BatteryMOTUK</h2>
+
+<div class="about-divider"></div>
+
+<p>
+BatteryMOTUK is an independent battery grading and certification platform designed 
+to transform low-trust used battery markets into safe, traceable, and auditable systems.
+</p>
+
+<p>
+The platform combines safety gateway testing, fast health grading, and digital certification 
+to deliver clear decision outcomes for reuse, refurbishment, repurposing, or recycling
+reducing risk while increasing recovery value across battery lifecycles.
+</p>
+
+<p>
+By introducing a standardised “Battery MOT” process, the company enables fleets, 
+retailers, recyclers, and insurers to operate with confidence, backed by verified data, 
+chain-of-custody tracking, and compliance-ready documentation.
+</p>
+
+<div class="about-features">
+
+<div class="feature">Safety-First Certification</div>
+<div class="feature">Standardised Battery Grading</div>
+<div class="feature">Traceability & Audit Logs</div>
+<div class="feature">Lifecycle Decision Intelligence</div>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDE -->
+
+<div class="about-right">
+
+<div class="founder-box">
+
+<h3 class="founder-title">Founder</h3>
+
+<div class="founder-divider"></div>
+
+<p>
+<strong>Raja Irtaza Fayyaz</strong>, a Mechanical Engineer with expertise in systems design, 
+operations, and engineering analysis, founded BatteryMOTUK to address a critical gap 
+in battery safety, trust, and lifecycle management.
+</p>
+
+<p>
+Through hands-on engineering experience and exposure to real-world operational systems, 
+he identified the lack of a standard, independent certification layer for batteries
+leading to safety risks, poor traceability, and inefficient reuse decisions.
+</p>
+
+<p>
+BatteryMOTUK was built to solve this problem by combining engineering rigor with 
+structured decision systems, enabling a scalable and trustworthy battery ecosystem.
+</p>
+
+<a href="#" class="linkedin-btn">
+LinkedIn
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<style>
+
+/* SECTION */
+
+.about-section{
+padding:140px 8%;
+background:linear-gradient(
+135deg,
+#8B0000 0%,
+#800020 20%,
+#7E191B 35%,
+#191970 55%,
+#000080 70%,
+#003366 100%
+);
+font-family:'Segoe UI',sans-serif;
+}
+
+/* CONTAINER */
+
+.about-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1.3fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+/* LEFT */
+
+.about-left h2{
+font-size:42px;
+margin-bottom:10px;
+color:white;
+}
+
+/* DIVIDER */
+
+.about-divider{
+width:80px;
+height:3px;
+margin:12px 0 25px;
+border-radius:3px;
+
+background:linear-gradient(
+90deg,
+#ffffff,
+#ffcccc,
+#ffffff
+);
+}
+
+/* TEXT */
+
+.about-left p{
+color:#eee;
+line-height:1.8;
+margin-bottom:20px;
+font-size:16px;
+max-width:520px;
+}
+
+/* FEATURES */
+
+.about-features{
+margin-top:25px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.feature{
+background:white;
+color:#8B0000;
+padding:10px 14px;
+border-radius:6px;
+font-size:14px;
+font-weight:600;
+}
+
+/* FOUNDER BOX */
+
+.founder-box{
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
+}
+
+.founder-title{
+margin-bottom:5px;
+color:#8B0000;
+}
+
+/* DIVIDER */
+
+.founder-divider{
+width:60px;
+height:3px;
+margin-bottom:15px;
+
+background:linear-gradient(
+90deg,
+#8B0000,
+#800020,
+#000080
+);
+}
+
+/* TEXT */
+
+.founder-box p{
+color:#555;
+line-height:1.7;
+margin-bottom:18px;
+}
+
+/* BUTTON */
+
+.linkedin-btn{
+display:inline-block;
+padding:10px 18px;
+background:linear-gradient(
+135deg,
+#8B0000,
+#800020,
+#000080
+);
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-weight:600;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.about-section{
+padding:90px 6%;
+}
+
+.about-container{
+grid-template-columns:1fr;
+gap:40px;
+text-align:center;
+}
+
+.about-left h2{
+font-size:32px;
+}
+
+/* CENTER DIVIDER */
+
+.about-divider{
+margin:12px auto 20px;
+}
+
+.about-left p{
+margin:auto;
+font-size:15px;
+max-width:100%;
+}
+
+/* FEATURES MOBILE */
+
+.about-features{
+grid-template-columns:1fr;
+max-width:320px;
+margin:auto;
+}
+
+/* FOUNDER */
+
+.founder-divider{
+margin:12px auto 18px;
+}
+
+}
+
+</style>
+
+<!-- ABOUT SECTION END -->
+<!-- PROCESS SECTION START -->
+
+<section class="process-section" id="process">
+
+<div class="process-container">
+
+<h2 class="process-title">How BatteryMOTUK Works</h2>
+
+<div class="process-divider"></div>
+
+<p class="process-sub">
+BatteryMOTUK transforms uncertain battery conditions into clear, auditable decisions 
+through a structured grading and certification process designed for safety, traceability, and lifecycle optimisation.
+</p>
+
+
+<div class="process-grid">
+
+<!-- STEP 1 -->
+<div class="process-card">
+
+<img src="b1.png" class="process-img">
+
+<div class="step">01</div>
+
+<h3>Intake & Identity Capture</h3>
+
+<p>
+Each battery is registered with a unique ID, photographed, and assigned a tamper-evident seal. 
+Metadata such as battery type, condition, and source is recorded to establish a traceable identity baseline.
+</p>
+
+</div>
+
+
+<!-- STEP 2 -->
+<div class="process-card">
+
+<img src="b2.png" class="process-img">
+
+<div class="step">02</div>
+
+<h3>Safety Inspection & Screening</h3>
+
+<p>
+A safety-first assessment checks for physical damage, overheating signs, and electrical risks. 
+Unsafe batteries are immediately quarantined to prevent circulation and ensure compliance.
+</p>
+
+</div>
+
+
+<!-- STEP 3 -->
+<div class="process-card">
+
+<img src="b3.png" class="process-img">
+
+<div class="step">03</div>
+
+<h3>Health Grading & Analysis</h3>
+
+<p>
+Advanced testing evaluates battery performance, resistance, and stability to assign a standardized grade 
+(A, B, C, or Reject) along with a confidence score and operational condition.
+</p>
+
+</div>
+
+
+<!-- STEP 4 -->
+<div class="process-card">
+
+<img src="b4.png" class="process-img">
+
+<div class="step">04</div>
+
+<h3>Certification & Smart Routing</h3>
+
+<p>
+A QR-linked digital certificate is generated with full audit history, safety classification, and recommended routing 
+(reuse, refurbish, repurpose, or recycle), enabling safe and efficient lifecycle decisions.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.process-section{
+position:relative;
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+overflow:hidden;
+}
+
+/* 🔥 SHAPES */
+
+.process-section::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:200px;
+height:200px;
+background:#8B0000;
+clip-path:polygon(100% 0, 0 0, 100% 100%);
+}
+
+.process-section::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:220px;
+height:220px;
+background:#000080;
+clip-path:polygon(0 100%, 0 0, 100% 100%);
+}
+
+/* CONTAINER */
+
+.process-container{
+max-width:1200px;
+margin:auto;
+position:relative;
+z-index:2;
+}
+
+/* TITLE */
+
+.process-title{
+font-size:40px;
+color:#111;
+margin-bottom:10px;
+}
+
+/* DIVIDER */
+
+.process-divider{
+width:80px;
+height:3px;
+margin:10px auto 25px;
+border-radius:3px;
+
+background:linear-gradient(
+90deg,
+#8B0000,
+#800020,
+#000080
+);
+}
+
+/* SUBTEXT */
+
+.process-sub{
+max-width:650px;
+margin:auto;
+margin-bottom:60px;
+color:#444;
+line-height:1.7;
+}
+
+/* GRID */
+
+.process-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+/* CARD */
+
+.process-card{
+background:white;
+padding:25px;
+border-radius:12px;
+border:1px solid #eee;
+border-top:4px solid #8B0000;
+text-align:left;
+transition:0.35s;
+}
+
+.process-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* IMAGE */
+
+.process-img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+/* STEP */
+
+.step{
+display:inline-block;
+background:linear-gradient(
+135deg,
+#8B0000,
+#800020,
+#000080
+);
+color:white;
+font-size:13px;
+font-weight:700;
+padding:6px 14px;
+border-radius:4px;
+margin-bottom:12px;
+}
+
+/* TITLE */
+
+.process-card h3{
+margin-bottom:10px;
+color:#111;
+font-size:18px;
+}
+
+/* TEXT */
+
+.process-card p{
+color:#555;
+font-size:14px;
+line-height:1.6;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+.process-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.process-grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+<!-- PLATFORM SECTION START -->
+
+<section class="platform-section" id="platform">
+
+<div class="platform-container">
+
+<h2 class="platform-title">BatteryMOTUK Platform</h2>
+
+<div class="platform-divider"></div>
+
+<p class="platform-sub">
+BatteryMOTUK is a certification and decision platform that converts battery condition data 
+into trusted, auditable outcomes for safe reuse, refurbishment, and recycling.
+</p>
+
+
+<div class="platform-grid">
+
+<!-- CARD 1 -->
+<div class="platform-card">
+
+<img src="b5.png" class="platform-img">
+
+<h3>Battery Identity & Tracking</h3>
+
+<p class="short-text">
+Every battery becomes traceable.
+</p>
+
+<p class="more-text">
+Each battery is assigned a unique digital identity with QR linkage, metadata capture, 
+and tamper-aware tracking to ensure full lifecycle traceability and auditability.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 2 -->
+<div class="platform-card">
+
+<img src="b6.png" class="platform-img">
+
+<h3>Safety Gate Decision Engine</h3>
+
+<p class="short-text">
+Safety-first classification system.
+</p>
+
+<p class="more-text">
+The platform applies strict safety checks to detect risks such as damage, instability, 
+or thermal issues, automatically blocking unsafe batteries from circulation.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 3 -->
+<div class="platform-card">
+
+<img src="b7.png" class="platform-img">
+
+<h3>Health Grading System</h3>
+
+<p class="short-text">
+Standardised battery grading.
+</p>
+
+<p class="more-text">
+Advanced testing evaluates battery condition using performance signals and assigns 
+grades (A, B, C, or Reject) with confidence scoring for reliable decision-making.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 4 -->
+<div class="platform-card">
+
+<img src="b8.png" class="platform-img">
+
+<h3>Digital Certificate Engine</h3>
+
+<p class="short-text">
+Verified certification output.
+</p>
+
+<p class="more-text">
+Each battery receives a QR-linked certificate containing safety status, grading results, 
+audit logs, and permitted usage conditions for trusted verification.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 5 -->
+<div class="platform-card">
+
+<img src="b9.png" class="platform-img">
+
+<h3>Routing & Decision System</h3>
+
+<p class="short-text">
+Clear next-step actions.
+</p>
+
+<p class="more-text">
+The platform recommends optimal outcomes such as reuse, refurbishment, repurposing, 
+or recycling based on safety and economic logic.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 6 -->
+<div class="platform-card">
+
+<img src="b10.png" class="platform-img">
+
+<h3>Analytics & Stakeholder Dashboard</h3>
+
+<p class="short-text">
+Insights for better decisions.
+</p>
+
+<p class="more-text">
+Dashboards provide insights into battery performance, failure patterns, 
+and lifecycle outcomes for fleets, recyclers, and insurers.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.platform-section{
+padding:120px 8%;
+background:linear-gradient(
+135deg,
+#8B0000 0%,
+#800020 20%,
+#7E191B 35%,
+#191970 55%,
+#000080 70%,
+#003366 100%
+);
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+color:white;
+}
+
+/* CONTAINER */
+
+.platform-container{
+max-width:1100px;
+margin:auto;
+}
+
+/* TITLE */
+
+.platform-title{
+font-size:40px;
+margin-bottom:10px;
+color:white;
+}
+
+/* DIVIDER */
+
+.platform-divider{
+width:80px;
+height:3px;
+margin:12px auto 25px;
+
+background:linear-gradient(
+90deg,
+#ffffff,
+#ffcccc,
+#ffffff
+);
+}
+
+/* SUB */
+
+.platform-sub{
+max-width:650px;
+margin:auto;
+margin-bottom:60px;
+color:#ddd;
+}
+
+/* GRID */
+
+.platform-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+/* CARD */
+
+.platform-card{
+background:white;
+color:#333;
+padding:25px;
+border-radius:12px;
+transition:0.3s;
+text-align:left;
+}
+
+.platform-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* IMAGE */
+
+.platform-img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+/* TITLE */
+
+.platform-card h3{
+margin-bottom:8px;
+color:#8B0000;
+}
+
+/* TEXT */
+
+.short-text{
+color:#555;
+margin-bottom:10px;
+}
+
+.more-text{
+display:none;
+font-size:14px;
+color:#555;
+line-height:1.6;
+margin-bottom:10px;
+}
+
+/* BUTTON */
+
+.learn-btn{
+background:linear-gradient(
+135deg,
+#8B0000,
+#800020,
+#000080
+);
+color:white;
+border:none;
+padding:11px 20px;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+.platform-grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+
+
+<script>
+
+const buttons = document.querySelectorAll(".learn-btn");
+
+buttons.forEach(btn => {
+
+btn.addEventListener("click", function(){
+
+const card = this.parentElement;
+const more = card.querySelector(".more-text");
+
+if(more.style.display === "block"){
+more.style.display = "none";
+this.innerText = "Learn More";
+}else{
+more.style.display = "block";
+this.innerText = "Show Less";
+}
+
+});
+
+});
+
+</script>
+
+<!-- PLATFORM SECTION END -->
+<!-- PRICING SECTION START -->
+
+<section class="pricing-section" id="pricing">
+
+<div class="pricing-container">
+
+<h2 class="pricing-title">BatteryMOTUK Pricing</h2>
+
+<div class="title-divider"></div>
+
+<p class="pricing-sub">
+Transparent pricing aligned with battery volume, safety requirements, and operational scale. 
+Designed to deliver measurable risk reduction and recovery value across battery lifecycles.
+</p>
+
+<div class="pricing-grid">
+
+<!-- BASIC -->
+
+<div class="pricing-card">
+
+<h3>Basic Grading</h3>
+
+<p class="price">£8 – £15 / battery</p>
+
+<div class="card-divider"></div>
+
+<ul>
+<li><span class="tick">✓</span> Safety Inspection (Visual + Electrical)</li>
+<li><span class="tick">✓</span> Basic Health Grading (A/B/C/Reject)</li>
+<li><span class="tick">✓</span> Standard Certificate</li>
+<li><span class="tick">✓</span> Recommended Routing</li>
+<li><span class="tick">✓</span> Batch Processing Support</li>
+</ul>
+
+<button onclick="selectPlan('Basic')">Get Started</button>
+
+</div>
+
+
+<!-- STANDARD -->
+
+<div class="pricing-card pro-card">
+
+<div class="pro-badge">Most Popular</div>
+
+<h3>Standard Certification</h3>
+
+<p class="price">£15 – £30 / battery</p>
+
+<div class="card-divider"></div>
+
+<ul>
+<li><span class="tick">✓</span> Full Safety Gate Testing</li>
+<li><span class="tick">✓</span> Advanced Health Analysis</li>
+<li><span class="tick">✓</span> QR-Linked Digital Certificate</li>
+<li><span class="tick">✓</span> Chain-of-Custody Tracking</li>
+<li><span class="tick">✓</span> Confidence Score & Audit Data</li>
+</ul>
+
+<button onclick="selectPlan('Standard')">Choose Standard</button>
+
+</div>
+
+
+<!-- ADVANCED -->
+
+<div class="pricing-card">
+
+<h3>Advanced / Enterprise</h3>
+
+<p class="price">Custom Pricing</p>
+
+<div class="card-divider"></div>
+
+<ul>
+<li><span class="tick">✓</span> High-Throughput Fleet Processing</li>
+<li><span class="tick">✓</span> API & Platform Integration</li>
+<li><span class="tick">✓</span> Multi-Location Dashboard</li>
+<li><span class="tick">✓</span> Analytics & Lifecycle Insights</li>
+<li><span class="tick">✓</span> Dedicated Support & SLA</li>
+</ul>
+
+<button onclick="selectPlan('Enterprise')">Contact Sales</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.pricing-section{
+position:relative;
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+overflow:hidden;
+}
+
+/* SHAPES */
+
+.pricing-section::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:200px;
+height:200px;
+background:#8B0000;
+clip-path:polygon(100% 0, 0 0, 100% 100%);
+}
+
+.pricing-section::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:220px;
+height:220px;
+background:#000080;
+clip-path:polygon(0 100%, 0 0, 100% 100%);
+}
+
+/* TITLE */
+
+.pricing-title{
+font-size:40px;
+color:#111;
+}
+
+/* DIVIDER */
+
+.title-divider{
+width:80px;
+height:3px;
+margin:12px auto 25px;
+
+background:linear-gradient(
+90deg,
+#8B0000,
+#800020,
+#000080
+);
+}
+
+/* SUB */
+
+.pricing-sub{
+color:#444;
+margin-bottom:60px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* GRID */
+
+.pricing-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+position:relative;
+z-index:2;
+}
+
+/* CARD */
+
+.pricing-card{
+background:white;
+padding:40px 30px;
+border-radius:12px;
+border:1px solid #eee;
+transition:0.3s;
+}
+
+.pricing-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* POPULAR */
+
+.pro-card{
+border:2px solid #8B0000;
+transform:scale(1.05);
+}
+
+.pro-badge{
+position:absolute;
+top:-12px;
+left:50%;
+transform:translateX(-50%);
+background:#8B0000;
+color:white;
+font-size:12px;
+padding:6px 18px;
+border-radius:20px;
+}
+
+/* PRICE */
+
+.price{
+margin:15px 0;
+font-size:24px;
+font-weight:700;
+color:#8B0000;
+}
+
+/* DIVIDER */
+
+.card-divider{
+height:3px;
+width:50px;
+margin:15px auto 20px;
+background:linear-gradient(
+90deg,
+#8B0000,
+#800020,
+#000080
+);
+}
+
+/* LIST */
+
+.pricing-card ul{
+list-style:none;
+padding:0;
+margin-bottom:25px;
+text-align:left;
+}
+
+.pricing-card li{
+margin:10px 0;
+color:#444;
+font-size:14px;
+}
+
+/* TICK */
+
+.tick{
+color:#8B0000;
+font-weight:bold;
+margin-right:8px;
+}
+
+/* BUTTON */
+
+.pricing-card button{
+padding:12px 24px;
+border:none;
+background:linear-gradient(
+135deg,
+#8B0000,
+#800020,
+#000080
+);
+color:white;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+.pricing-card button:hover{
+transform:translateY(-2px);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.pricing-grid{
+grid-template-columns:1fr;
+}
+
+.pro-card{
+transform:none;
+}
+
+}
+
+</style>
+
+
+<script>
+
+function selectPlan(plan){
+alert("Selected plan: " + plan);
+document.getElementById("contact").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+</script>
+
+<!-- FAQ SECTION START -->
+
+<section class="faq-section" id="faq">
+
+<div class="faq-container">
+
+<h2 class="faq-title">Frequently Asked Questions</h2>
+
+<div class="faq-divider"></div>
+
+<p class="faq-sub">
+Understand how BatteryMOTUK ensures safety, traceability, and value recovery 
+through structured battery grading and certification.
+</p>
+
+<div class="faq-list">
+
+<!-- FAQ 1 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>What is BatteryMOTUK?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+BatteryMOTUK is a battery grading and certification platform that evaluates battery safety, 
+performance, and lifecycle condition to provide standardised grades and digital certificates.
+</p>
+</div>
+</div>
+
+<!-- FAQ 2 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>Why is battery grading important?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+Battery grading reduces safety risks, prevents unsafe reuse, and enables informed decisions 
+for reuse, refurbishment, or recycling based on verified condition data.
+</p>
+</div>
+</div>
+
+<!-- FAQ 3 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>How does the certification process work?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+Each battery goes through intake registration, safety inspection, performance testing, 
+and grading. A QR-linked certificate is then issued with full audit history and routing recommendations.
+</p>
+</div>
+</div>
+
+<!-- FAQ 4 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>What grades are assigned to batteries?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+Batteries are classified into standard grades such as A, B, C, or Reject, 
+based on health, safety condition, and performance reliability.
+</p>
+</div>
+</div>
+
+<!-- FAQ 5 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>Who can use BatteryMOTUK?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+BatteryMOTUK is designed for EV fleets, recyclers, refurbishers, insurers, 
+and organisations managing large volumes of battery assets.
+</p>
+</div>
+</div>
+
+<!-- FAQ 6 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>How does this improve business value?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+By providing verified battery condition data, businesses can reduce risk, 
+recover more value from usable batteries, and optimise lifecycle decisions.
+</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.faq-section{
+padding:120px 8%;
+background:linear-gradient(
+135deg,
+#8B0000 0%,
+#800020 20%,
+#7E191B 35%,
+#191970 55%,
+#000080 70%,
+#003366 100%
+);
+font-family:'Segoe UI',sans-serif;
+}
+
+/* CONTAINER */
+
+.faq-container{
+max-width:900px;
+margin:auto;
+}
+
+/* TITLE */
+
+.faq-title{
+text-align:center;
+color:white;
+font-size:36px;
+margin-bottom:10px;
+}
+
+/* SUB */
+
+.faq-sub{
+text-align:center;
+color:#ddd;
+margin-bottom:45px;
+}
+
+/* DIVIDER */
+
+.faq-divider{
+width:80px;
+height:3px;
+margin:15px auto 30px;
+
+background:linear-gradient(
+90deg,
+#ffffff,
+#ffcccc,
+#ffffff
+);
+}
+
+/* LIST */
+
+.faq-list{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+/* CARD */
+
+.faq-item{
+background:white;
+border-radius:10px;
+padding:18px 20px;
+transition:0.3s;
+}
+
+/* HOVER */
+
+.faq-item:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* QUESTION */
+
+.faq-question{
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+color:#8B0000;
+font-size:16px;
+font-weight:600;
+}
+
+/* BUTTON */
+
+.toggle{
+background:linear-gradient(
+135deg,
+#8B0000,
+#800020,
+#000080
+);
+border:none;
+color:white;
+font-size:18px;
+width:32px;
+height:32px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* ANSWER */
+
+.faq-answer{
+display:none;
+margin-top:12px;
+}
+
+.faq-answer p{
+color:#444;
+line-height:1.7;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+.faq-title{
+font-size:28px;
+}
+}
+
+</style>
+
+
+<script>
+
+const questions = document.querySelectorAll(".faq-question");
+
+questions.forEach(q=>{
+
+q.addEventListener("click",()=>{
+
+const answer = q.nextElementSibling;
+const btn = q.querySelector(".toggle");
+
+if(answer.style.display === "block"){
+
+answer.style.display = "none";
+btn.innerHTML = "+";
+
+}else{
+
+document.querySelectorAll(".faq-answer").forEach(a=>{
+a.style.display = "none";
+});
+
+document.querySelectorAll(".toggle").forEach(b=>{
+b.innerHTML = "+";
+});
+
+answer.style.display = "block";
+btn.innerHTML = "−";
+
+}
+
+});
+
+});
+
+</script>
+
+<!-- FAQ SECTION END -->
+<!-- CONTACT SECTION START -->
+
+<section class="contact-section" id="contact">
+
+<div class="contact-container">
+
+<!-- LEFT -->
+
+<div class="contact-left">
+
+<h2>Contact BatteryMOTUK</h2>
+<div class="contact-divider"></div>
+
+<p class="contact-text">
+BatteryMOTUK provides advanced battery grading and certification to ensure 
+safety, traceability, and performance reliability across battery ecosystems.
+
+Get in touch with our team to explore partnerships, certification services, 
+or technical integration.
+</p>
+
+<!-- INFO BOX -->
+
+<div class="info-box">
+
+<div class="contact-item">
+<h3>Phone</h3>
+<p>+44 7388285438</p>
+</div>
+
+<div class="contact-item">
+<h3>Email</h3>
+<p>batterymotuk@outlook.com</p>
+</div>
+
+<div class="contact-item">
+<h3>Location</h3>
+<p>United Kingdom</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT FORM -->
+
+<div class="contact-right">
+
+<form class="contact-form">
+
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<input type="tel" placeholder="Phone Number">
+<textarea rows="4" placeholder="Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+<p class="note">We will respond within 24 hours.</p>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.contact-section{
+position:relative;
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+overflow:hidden;
+}
+
+/* 🔥 RED SHAPES (PDF STYLE) */
+
+.contact-section::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:200px;
+height:200px;
+background:#8B0000;
+clip-path:polygon(100% 0, 0 0, 100% 100%);
+}
+
+.contact-section::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:220px;
+height:220px;
+background:#000080;
+clip-path:polygon(0 100%, 0 0, 100% 100%);
+}
+
+/* CONTAINER */
+
+.contact-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+position:relative;
+z-index:2;
+}
+
+/* LEFT */
+
+.contact-left h2{
+font-size:40px;
+color:#111;
+}
+
+/* DIVIDER (CENTER FIX OPTION READY) */
+
+.contact-divider{
+width:60px;
+height:3px;
+margin:12px 0 20px;
+border-radius:3px;
+
+background:linear-gradient(
+90deg,
+#8B0000,
+#800020,
+#000080
+);
+}
+
+/* TEXT */
+
+.contact-text{
+color:#444;
+line-height:1.8;
+margin-bottom:35px;
+max-width:480px;
+}
+
+/* INFO BOX */
+
+.info-box{
+background:#f8f9fb;
+border-left:4px solid #8B0000;
+padding:25px;
+border-radius:10px;
+display:flex;
+flex-direction:column;
+gap:18px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* ITEMS */
+
+.contact-item h3{
+font-size:14px;
+color:#8B0000;
+margin-bottom:4px;
+}
+
+.contact-item p{
+font-size:14px;
+color:#222;
+}
+
+/* FORM */
+
+.contact-form{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 20px 50px rgba(0,0,0,0.06);
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+/* INPUT */
+
+.contact-form input,
+.contact-form textarea{
+padding:14px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+outline:none;
+transition:0.3s;
+}
+
+/* FOCUS */
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+border-color:#000080;
+box-shadow:0 0 0 2px rgba(0,0,128,0.15);
+}
+
+/* BUTTON */
+
+.contact-form button{
+margin-top:10px;
+
+background:linear-gradient(
+135deg,
+#8B0000,
+#800020,
+#000080
+);
+
+color:white;
+border:none;
+padding:14px;
+font-weight:600;
+letter-spacing:1px;
+cursor:pointer;
+border-radius:6px;
+transition:0.3s;
+}
+
+.contact-form button:hover{
+transform:translateY(-2px);
+}
+
+/* NOTE */
+
+.note{
+font-size:12px;
+color:#8B0000;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.contact-section{
+padding:80px 6%;
+}
+
+.contact-container{
+grid-template-columns:1fr;
+gap:40px;
+text-align:center;
+}
+
+/* CENTER DIVIDER */
+
+.contact-divider{
+margin:15px auto 25px;
+}
+
+/* TEXT */
+
+.contact-text{
+margin:auto;
+max-width:100%;
+}
+
+/* BOX */
+
+.info-box{
+max-width:340px;
+margin:auto;
+text-align:left;
+}
+
+.contact-form{
+padding:30px;
+}
+
+}
+
+</style>
+
+<!-- CONTACT SECTION END -->
+<!-- FOOTER START -->
+
+<style>
+
+/* ROOT COLORS (YOUR PALETTE MERGED CLEANLY) */
+:root{
+--red1:#8B0000;
+--red2:#800020;
+--red3:#7E191B;
+--blue1:#000080;
+--blue2:#191970;
+--blue3:#003366;
+}
+
+/* FOOTER BACKGROUND (SMOOTH COMBINED GRADIENT) */
+.footer{
+position:relative;
+overflow:hidden;
+
+background:
+linear-gradient(135deg,
+#8B0000 0%,
+#800020 20%,
+#7E191B 35%,
+#191970 55%,
+#000080 70%,
+#003366 100%
+);
+
+color:white;
+padding:80px 8% 30px;
+font-family:'Segoe UI',sans-serif;
+}
+
+/* 🔥 SHAPE OVERLAY (MODERN DESIGN) */
+.footer::before{
+content:"";
+position:absolute;
+top:-50px;
+right:-50px;
+width:300px;
+height:300px;
+background:rgba(255,255,255,0.05);
+transform:rotate(45deg);
+border-radius:20px;
+}
+
+.footer::after{
+content:"";
+position:absolute;
+bottom:-60px;
+left:-60px;
+width:260px;
+height:260px;
+background:rgba(255,255,255,0.04);
+transform:rotate(45deg);
+border-radius:20px;
+}
+
+/* CONTAINER */
+.footer-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1.5fr 1fr 1fr;
+gap:60px;
+position:relative;
+z-index:2;
+}
+
+/* LEFT */
+.footer-left h3{
+font-size:22px;
+font-weight:700;
+}
+
+.footer-divider{
+width:50px;
+height:3px;
+margin:10px auto 18px;   /* 🔥 CENTER */
+border-radius:3px;
+
+background:linear-gradient(
+90deg,
+#FF4C4C,
+#C25283,
+#4F7FFF
+);
+}
+/* TEXT */
+.footer-left p{
+font-size:14px;
+line-height:1.8;
+color:#e6e6e6;
+max-width:420px;
+}
+
+/* LINKS */
+.footer-links h4{
+font-size:16px;
+margin-bottom:6px;
+}
+
+.footer-links a{
+display:block;
+text-decoration:none;
+color:#ddd;
+margin-bottom:10px;
+font-size:14px;
+transition:0.3s;
+}
+
+.footer-links a:hover{
+color:white;
+transform:translateX(5px);
+}
+
+/* BOTTOM */
+.footer-bottom{
+max-width:1100px;
+margin:50px auto 0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-top:1px solid rgba(255,255,255,0.15);
+padding-top:20px;
+font-size:13px;
+color:#ccc;
+}
+
+/* BUTTON */
+.top-btn{
+background:linear-gradient(135deg,#FF4C4C,#4F7FFF);
+color:white;
+border:none;
+width:40px;
+height:40px;
+border-radius:50%;
+cursor:pointer;
+font-size:18px;
+transition:0.3s;
+}
+
+.top-btn:hover{
+transform:translateY(-5px) scale(1.05);
+}
+
+/* 🔥 MOBILE PERFECT */
+@media(max-width:900px){
+
+.footer{
+padding:70px 6% 25px;
+}
+
+.footer-container{
+grid-template-columns:1fr;
+gap:40px;
+text-align:center;
+}
+
+/* CENTER ALL */
+.footer-left,
+.footer-links{
+align-items:center;
+}
+
+/* TEXT FIX */
+.footer-left p{
+text-align:center;
+max-width:320px;
+margin:auto;
+}
+
+/* DIVIDER CENTER */
+.footer-divider{
+margin:10px auto 18px;
+}
+
+/* BOTTOM */
+.footer-bottom{
+flex-direction:column;
+gap:12px;
+text-align:center;
+}
+
+}
+
+</style>
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- LEFT -->
+<div class="footer-left">
+
+<h3>BatteryMOTUK</h3>
+<div class="footer-divider"></div>
+
+<p>
+BatteryMOTUK is an advanced battery grading and certification platform 
+designed to improve safety, traceability, and lifecycle optimisation for battery systems.
+
+We enable smarter decisions through data-driven insights, ensuring 
+reliable performance and reduced operational risks.
+</p>
+
+</div>
+
+<!-- CENTER -->
+<div class="footer-links">
+
+<h4>Platform</h4>
+<div class="footer-divider"></div>
+
+<a href="#home">Home</a>
+<a href="#platform">Platform</a>
+<a href="#process">Process</a>
+<a href="#pricing">Pricing</a>
+
+</div>
+
+<!-- RIGHT -->
+<div class="footer-links">
+
+<h4>Company</h4>
+<div class="footer-divider"></div>
+
+<a href="#about">About</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="footer-bottom">
+
+<p>© 2026 BatteryMOTUK. All rights reserved.</p>
+
+<button class="top-btn" onclick="scrollToTop()">↑</button>
+
+</div>
+
+</footer>
+
+<script>
+function scrollToTop(){
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+}
+</script>
+
+<!-- FOOTER END -->
+
+</body>
+</html>
+
